@@ -321,10 +321,10 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  I'm a passionate Software Engineer with a strong foundation in building scalable, user-friendly applications. My background combines programming expertise with problem-solving skills, allowing me to create solutions that are both efficient and impactful.
+                  I&apos;m a passionate Software Engineer with a strong foundation in building scalable, user-friendly applications. My background combines programming expertise with problem-solving skills, allowing me to create solutions that are both efficient and impactful.
                 </p>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  Beyond coding, I thrive in collaborative environments where I can learn from others and share my own knowledge. I'm always looking to grow, whether that's by exploring new technologies, refining my technical skills, or tackling challenging projects.
+                  Beyond coding, I thrive in collaborative environments where I can learn from others and share my own knowledge. I&apos;m always looking to grow, whether that&apos;s  by exploring new technologies, refining my technical skills, or tackling challenging projects.
                 </p>
               </div>
 
@@ -460,12 +460,12 @@ export default function Home() {
         >
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-6xl font-bold mb-12 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-              Let's Work Together
+              Let&apos;s Work Together
             </h2>
 
             <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-12">
               <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-                I'm always interested in new opportunities and exciting projects. Let's create something amazing together!
+                I&apos;m always interested in new opportunities and exciting projects. Let&apos;s create something amazing together!
               </p>
 
               <div className="flex flex-wrap justify-center gap-6">
