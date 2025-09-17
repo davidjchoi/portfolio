@@ -250,18 +250,18 @@ export default function Home() {
               <h1 className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-white via-purple-200 to-blue-300 bg-clip-text text-transparent animate-pulse">
                 David Choi
               </h1>
-              <p className="text-2xl md:text-3xl text-purple-300 font-semibold">
+              <p className="text-2xl md:text-3xl text-purple-300 font-semibold mt-30">
                 Software Developer / Designer
               </p>
-              <p className="text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
+              <p className="text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto mt-20">
                 Software engineer who loves turning ideas into code and is always eager to learn new technologies.
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-20 mt-12 mt-70">
               <button
                 onClick={() => scrollToSection('projects')}
-                className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-lg shadow-purple-500/25"
+                className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full font-semibold text-lg hover:scale-105 transition-all duration-300 shadow-lg shadow-purple-500/25 "
               >
                 View My Work
               </button>
@@ -273,12 +273,12 @@ export default function Home() {
               </button>
             </div>
 
-            <div className="flex justify-center gap-6 mt-8">
+            <div className="flex justify-center gap-10 mt-50">
               <a
                 href="https://github.com/davidjchoi"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-0.5 hover:scale-105 transition-all duration-300"
+                className="group relative overflow-hidden rounded-md bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-0.5 hover:scale-105 transition-all duration-300"
               >
                 <span className="block rounded-md bg-slate-950 px-6 py-3 text-sm font-medium group-hover:bg-transparent transition-all duration-300">
                   <Image
@@ -292,12 +292,12 @@ export default function Home() {
                 href="https://linkedin.com/in/davidj-choi"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-0.5 hover:scale-105 transition-all duration-300"
+                className="group relative overflow-hidden rounded-md bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-0.5 hover:scale-105 transition-all duration-300"
               >
                 <span className="block rounded-md bg-slate-950 px-6 py-3 text-sm font-medium group-hover:bg-transparent transition-all duration-300">
                   <Image
                   src="/linkedin.png"
-                  width={50}
+                  width={53}
                   height={50}
                   alt="linkedin" />
                 </span>
@@ -314,7 +314,7 @@ export default function Home() {
           }`}
         >
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-50">
               About Me
             </h2>
 
@@ -328,8 +328,8 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
-                <h3 className="text-2xl font-semibold mb-6 text-center">Skills & Technologies</h3>
+              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 mt-20">
+                <h3 className="text-2xl font-semibold mb-10 text-center">Skills & Technologies</h3>
                 <div className="flex flex-wrap gap-3 justify-center">
                   {["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Python", "PostgreSQL", "MongoDB", "AWS", "Docker"].map((skill, index) => (
                     <span
@@ -354,7 +354,7 @@ export default function Home() {
           }`}
         >
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-50">
               Experience
             </h2>
 
@@ -381,8 +381,8 @@ export default function Home() {
             </div>
 
             {/* Non-tech Experience */}
-            <div className="mt-16">
-              <h3 className="text-2xl md:text-3xl font-bold text-center mb-12 text-purple-300">
+            <div className="mt-40">
+              <h3 className="text-2xl md:text-3xl font-bold text-center mb-50 text-purple-300">
                 Additional Experience
               </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -408,7 +408,7 @@ export default function Home() {
           }`}
         >
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-50">
               Featured Projects
             </h2>
 
@@ -421,13 +421,14 @@ export default function Home() {
                 >
                   <div className="space-y-6">
                     <div className="h-48 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-xl flex items-center justify-center">
-                      {/* <span className="text-4xl"></span> */}
+                      <span className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors">{project.title}</span>
+
                     </div>
 
                     <div className="space-y-4">
-                      <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors">
+                      {/* <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors">
                         {project.title}
-                      </h3>
+                      </h3> */}
 
                       <p className="text-sm text-gray-400 leading-relaxed">
                         {project.description}
@@ -459,7 +460,7 @@ export default function Home() {
           }`}
         >
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-6xl font-bold mb-12 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-6xl font-bold mb-20 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
               Let&apos;s Work Together
             </h2>
 
