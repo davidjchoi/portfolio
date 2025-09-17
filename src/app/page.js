@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Image from "next/image";
+import NYCSkyline from './NYCSkyline';
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('hero')
@@ -20,119 +21,6 @@ export default function Home() {
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
 
-  // Three.js initialization
-  useEffect(() => {
-    let scene, camera, renderer, geometry, material, mesh, animationId
-
-    const initThreeJS = async () => {
-      try {
-        const THREE = await import('three')
-
-        const canvas = document.getElementById('threejs-canvas')
-        if (!canvas) return
-
-        scene = new THREE.Scene()
-        camera = new THREE.PerspectiveCamera(75, canvas.offsetWidth / canvas.offsetHeight, 0.1, 1000)
-        renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true })
-        renderer.setSize(canvas.offsetWidth, canvas.offsetHeight)
-        renderer.setClearColor(0x000000, 0)
-
-        const torusGeometry = new THREE.TorusGeometry(1, 0.4, 16, 100)
-        const torusMaterial = new THREE.MeshBasicMaterial({
-          color: 0x6366f1,
-          wireframe: true,
-          transparent: true,
-          opacity: 0.7
-        })
-        const torus = new THREE.Mesh(torusGeometry, torusMaterial)
-        scene.add(torus)
-
-        const particlesGeometry = new THREE.BufferGeometry()
-        const particlesCount = 500
-        const posArray = new Float32Array(particlesCount * 3)
-
-        for (let i = 0; i < particlesCount * 3; i++) {
-          posArray[i] = (Math.random() - 0.5) * 5
-        }
-
-        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3))
-        const particlesMaterial = new THREE.PointsMaterial({
-          size: 0.005,
-          color: 0x8b5cf6,
-          transparent: true,
-          opacity: 0.8
-        })
-        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial)
-        scene.add(particlesMesh)
-
-        camera.position.z = 3
-
-        const animate = () => {
-          animationId = requestAnimationFrame(animate)
-          torus.rotation.x += 0.01
-          torus.rotation.y += 0.01
-          particlesMesh.rotation.y += 0.002
-          renderer.render(scene, camera)
-        }
-
-        animate()
-
-        const handleResize = () => {
-          if (canvas) {
-            camera.aspect = canvas.offsetWidth / canvas.offsetHeight
-            camera.updateProjectionMatrix()
-            renderer.setSize(canvas.offsetWidth, canvas.offsetHeight)
-          }
-        }
-
-        window.addEventListener('resize', handleResize)
-
-        return () => {
-          window.removeEventListener('resize', handleResize)
-          if (animationId) cancelAnimationFrame(animationId)
-          if (renderer) renderer.dispose()
-        }
-      } catch (error) {
-        console.log('Three.js not available, using fallback')
-      }
-    }
-
-    const timeoutId = setTimeout(() => {
-      initThreeJS()
-    }, 1000)
-
-    return () => {
-      clearTimeout(timeoutId)
-      if (animationId) cancelAnimationFrame(animationId)
-    }
-  }, [])
-
-  // Intersection Observer for animations
-  useEffect(() => {
-    const observerOptions = {
-      threshold: 0.2,
-      rootMargin: '-50px 0px -50px 0px'
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id)
-          setIsVisible(prev => ({
-            ...prev,
-            [entry.target.id]: true
-          }))
-        }
-      })
-    }, observerOptions)
-
-    document.querySelectorAll('section[id]').forEach(el => {
-      observer.observe(el)
-    })
-
-    return () => observer.disconnect()
-  }, [])
-
   // Smooth scroll function
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
@@ -149,7 +37,7 @@ export default function Home() {
       link: "#"
     },
     {
-      title: "To do list",
+      title: "WhatToDo",
       description: "Developed a to-do list web application using vanilla JavaScript, enabling users to add tasks and track completion with a click.",
       tech: ["VanillaJS", "JasmineJS"],
       link: "#"
@@ -200,7 +88,7 @@ export default function Home() {
       {/* Animated Background */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
         <div
-          className="absolute w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"
+          className="absolute w-96 h-96 bg-blue-500/100 rounded-full blur-3xl animate-pulse"
           style={{
             left: `${mousePosition.x}%`,
             top: `${mousePosition.y}%`,
@@ -208,6 +96,11 @@ export default function Home() {
             transition: 'all 0.3s ease-out'
           }}
         />
+
+         {/* NYC Skyline */}
+          <div id="skyline" >
+            <NYCSkyline />
+          </div>
         <div
           className="absolute w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse"
           style={{
